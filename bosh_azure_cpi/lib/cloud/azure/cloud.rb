@@ -1,7 +1,7 @@
 # Copyright (c) 2009-2013 VMware, Inc.
 # Copyright (c) 2012 Piston Cloud Computing, Inc.
 
-module Bosh::OpenStackCloud
+module Bosh::AzureCloud
   ##
   # BOSH OpenStack CPI
   class Cloud < Bosh::Cloud
@@ -31,7 +31,7 @@ module Bosh::OpenStackCloud
       @logger = Bosh::Clouds::Config.logger
 
       @agent_properties = @options["agent"] || {}
-      @openstack_properties = @options["openstack"]
+      @openstack_properties = @options["azure"]
 
       @default_key_name = @openstack_properties["default_key_name"]
       @default_security_groups = @openstack_properties["default_security_groups"]
@@ -834,13 +834,13 @@ module Bosh::OpenStackCloud
     # @return [void]
     # @raise [ArgumentError] if options are not valid
     def validate_options
-      unless @options["openstack"].is_a?(Hash) &&
-          @options.has_key?("openstack") &&
-          @options["openstack"]["auth_url"] &&
-          @options["openstack"]["username"] &&
-          @options["openstack"]["api_key"] &&
-          @options["openstack"]["tenant"]
-        raise ArgumentError, "Invalid OpenStack configuration parameters"
+      unless @options["azure"].is_a?(Hash) &&
+          @options.has_key?("azure") &&
+          @options["azure"]["auth_url"] &&
+          @options["azure"]["username"] &&
+          @options["azure"]["api_key"] &&
+          @options["azure"]["tenant"]
+        raise ArgumentError, "Invalid Azure configuration parameters"
       end
 
       unless @options.has_key?("registry") &&

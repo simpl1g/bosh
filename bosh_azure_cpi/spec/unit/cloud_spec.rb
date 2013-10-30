@@ -3,7 +3,7 @@
 
 require "spec_helper"
 
-describe Bosh::OpenStackCloud::Cloud do
+describe Bosh::AzureCloud::Cloud do
   describe "creating via provider" do
     it "can be created using Bosh::Cloud::Provider" do
       Fog::Compute.stub(:new)

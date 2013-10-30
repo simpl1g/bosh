@@ -1,80 +1,80 @@
-# BOSH OpenStack Cloud Provider Interface
-# Copyright (c) 2009-2013 VMware, Inc.
+# BOSH Azure Cloud Provider Interface
+# Copyright (c) 2009-2013 VMware, Inc. 
 # Copyright (c) 2012 Piston Cloud Computing, Inc.
 
-For online documentation see: http://rubydoc.info/gems/bosh_openstack_cpi/
+For online documentation see: http://rubydoc.info/gems/bosh_Azure_cpi/
 
 ## Options
 
-These options are passed to the OpenStack CPI when it is instantiated.
+These options are passed to the Azure CPI when it is instantiated.
 
-### OpenStack options
+### Azure options
 
-The registry options are passed to the Openstack CPI by the BOSH director based on the settings in `director.yml`:
+The registry options are passed to the Azure CPI by the BOSH director based on the settings in `director.yml`:
 
 * `auth_url` (required)
-  URL of the OpenStack Identity endpoint to connect to
+  URL of the Azure Identity endpoint to connect to
 * `username` (required)
-  OpenStack user name
+  Azure user name
 * `api_key` (required)
-  OpenStack API key
+  Azure API key
 * `tenant` (required)
-  OpenStack tenant name
+  Azure tenant name
 * `region` (optional)
-  OpenStack region
+  Azure region
 * `endpoint_type` (optional)
-  OpenStack endpoint type (publicURL (default), adminURL, internalURL)
+  Azure endpoint type (publicURL (default), adminURL, internalURL)
 * `state_timeout` (optional)
-  Timeout (in seconds) for OpenStack resources desired state (by default 300)
+  Timeout (in seconds) for Azure resources desired state (by default 300)
 * `stemcell_public_visibility` (optional)
   Set public visibility for stemcells (true or false (default))
 * `default_key_name` (required)
-  default OpenStack ssh key name to assign to created virtual machines
+  default Azure ssh key name to assign to created virtual machines
 * `default_security_group` (required)
-  default OpenStack security group to assign to created virtual machines
+  default Azure security group to assign to created virtual machines
 
 ### Registry options
 
-The registry options are passed to the Openstack CPI by the BOSH director based on the settings in `director.yml`:
+The registry options are passed to the Azure CPI by the BOSH director based on the settings in `director.yml`:
 
 * `endpoint` (required)
-  OpenStack registry URL
+  Azure registry URL
 * `user` (required)
-  OpenStack registry user
+  Azure registry user
 * `password` (required)
-  OpenStack registry password
+  Azure registry password
 
 ### Agent options
 
-The agent options are passed to the OpenStack CPI by the BOSH director based on the settings in `director.yml`:
+The agent options are passed to the Azure CPI by the BOSH director based on the settings in `director.yml`:
 
 ## Network options
 
-The OpenStack CPI supports these networks types:
+The Azure CPI supports these networks types:
 
 * `type` (required)
-  can be `dynamic` for a DHCP assigned IP by OpenStack, `manual` for a static IP assigned manually at the BOSH deployment manifest or `vip` to use a Floating IP (which needs to be already allocated)
+  can be `dynamic` for a DHCP assigned IP by Azure, `manual` for a static IP assigned manually at the BOSH deployment manifest or `vip` to use a Floating IP (which needs to be already allocated)
 
 These options are specified under `cloud_properties` in the `networks` section of a BOSH deployment manifest:
 
 * `security_groups` (optional)
-  the OpenStack security groups to assign to VMs. If not specified, it'll use the default security groups set at the OpenStack options
+  the Azure security groups to assign to VMs. If not specified, it'll use the default security groups set at the Azure options
 
 * `net_id` (required for `manual` networks)
-  the OpenStack Quantum network UUID to attach as a NIC to VMs.
+  the Azure Quantum network UUID to attach as a NIC to VMs.
 
 ## Resource pool options
 
 These options are specified under `cloud_properties` in the `resource_pools` section of a BOSH deployment manifest:
 
 * `instance_type` (required)
-  which type of instance (OpenStack flavor) the VMs should belong to
+  which type of instance (Azure flavor) the VMs should belong to
 * `availability_zone` (optional)
-  the OpenStack availability zone the VMs should be created in
+  the Azure availability zone the VMs should be created in
 
 ## Example
 
-This is a sample of how OpenStack specific properties are used in a BOSH deployment manifest:
+This is a sample of how Azure specific properties are used in a BOSH deployment manifest:
 
     ---
     name: sample
@@ -113,7 +113,7 @@ This is a sample of how OpenStack specific properties are used in a BOSH deploym
         network: default
         size: 1
         stemcell:
-          name: bosh-openstack-kvm-ubuntu
+          name: bosh-Azure-kvm-ubuntu
           version: latest
         cloud_properties:
           instance_type: m1.small
@@ -122,7 +122,7 @@ This is a sample of how OpenStack specific properties are used in a BOSH deploym
     ...
 
     properties:
-      openstack:
+      Azure:
         auth_url: http://pistoncloud.com/:5000/v2.0
         username: christopher
         api_key: QRoqsenPsNGX6

@@ -22,7 +22,7 @@ module Bosh::OpenStackCloud
     # @param [Fog::Compute::OpenStack] openstack Fog OpenStack Compute client
     # @param [Fog::Compute::OpenStack::Server] server OpenStack server to
     #   configure
-    def configure(openstack, server)
+    def configure(azure, server)
     end
 
   end

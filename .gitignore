@@ -11,8 +11,10 @@
 .stemcell_builds/public_stemcell_config.yml
 .vagrant
 .yardoc
+.rvmrc
 
 /*/vendor/
+/vendor/cache
 
 Checkfile
 TAGS

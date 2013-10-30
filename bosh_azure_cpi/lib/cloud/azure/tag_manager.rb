@@ -1,6 +1,6 @@
 # Copyright (c) 2009-2013 VMware, Inc.
 
-module Bosh::OpenStackCloud
+module Bosh::AzureCloud
   class TagManager
 
     MAX_TAG_KEY_LENGTH = 255
