@@ -1,14 +1,13 @@
-PATH
-  remote: bosh_azure_cpi
+GIT
+  remote: https://github.com/WindowsAzure/azure-sdk-for-ruby.git
+  revision: 7ec670a9e36d58827601662b4140ca24c101ed34
+  branch: dev
   specs:
-    bosh_azure_cpi (1.5.0.pre.3)
-      azure (~> 0.5.0)
-      bosh-registry (~> 1.5.0.pre.3)
-      bosh_common (~> 1.5.0.pre.3)
-      bosh_cpi (~> 1.5.0.pre.3)
-      fog (~> 1.14.0)
-      httpclient (= 2.2.4)
-      yajl-ruby (>= 0.8.2)
+    azure (0.5.0)
+      json
+      mime-types (~> 1.0)
+      nokogiri (~> 1.5)
+      uuid
 
 PATH
   remote: agent_client
@@ -147,6 +146,18 @@ PATH
       yajl-ruby (>= 0.8.2)
 
 PATH
+  remote: bosh_azure_cpi
+  specs:
+    bosh_azure_cpi (1.5.0.pre.3)
+      azure (~> 0.5.0)
+      bosh-registry (~> 1.5.0.pre.3)
+      bosh_common (~> 1.5.0.pre.3)
+      bosh_cpi (~> 1.5.0.pre.3)
+      fog (~> 1.14.0)
+      httpclient (= 2.2.4)
+      yajl-ruby (>= 0.8.2)
+
+PATH
   remote: bosh_cli
   specs:
     bosh_cli (1.5.0.pre.3)
@@ -234,11 +245,6 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
-    azure (0.5.0)
-      json
-      mime-types (~> 1.0)
-      nokogiri (~> 1.5)
-      uuid
     backports (3.3.3)
     bcrypt-ruby (3.0.1)
     bosh_vcloud_cpi (0.4.9)
@@ -427,6 +433,7 @@ PLATFORMS
 
 DEPENDENCIES
   agent_client!
+  azure!
   blobstore_client!
   bosh-core!
   bosh-dev!

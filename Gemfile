@@ -28,6 +28,7 @@ group :production do
   # also bosh_openstack_registry, director
   gem 'pg'
   gem 'mysql2'
+  gem 'azure', git: 'https://github.com/WindowsAzure/azure-sdk-for-ruby.git', branch: 'dev'
 end
 
 group :development do
