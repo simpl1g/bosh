@@ -82,7 +82,7 @@ module Bosh::Stemcell
         :bosh_ntpdate,
         :bosh_sudoers,
         # Micro BOSH
-        :bosh_micro,
+        # :bosh_micro, # Temporarily disable bosh micro, while azure cpi is not written
         # Install GRUB/kernel/etc
         :system_grub,
         :system_kernel,
@@ -159,6 +159,7 @@ module Bosh::Stemcell
         :system_openstack_network,
         :system_openstack_clock,
         :system_openstack_modules,
+        :system_azure_agent,
         :system_parameters,
         # # Finalization,
         :bosh_clean,
